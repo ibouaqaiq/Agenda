@@ -1,6 +1,7 @@
 package com.example.issam.agenda.model;
 
 public class Persona {
+    private int id;
     private String nom;
     private String cognoms;
     private int edad;
@@ -10,6 +11,14 @@ public class Persona {
         this.nom = nomPersona;
         this.cognoms = cognomsPersona;
         this.edad = edadPersona;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public void posarNom(String valornom) {

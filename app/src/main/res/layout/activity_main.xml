@@ -41,9 +41,6 @@
                 android:layout_below="@+id/person_name"
                 />
             
-            <android.support.v7.widget.CardView
-                android:layout_width=""
-                android:layout_height=""></android.support.v7.widget.CardView>
 
         </RelativeLayout>
 

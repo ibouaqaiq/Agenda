@@ -1,10 +1,15 @@
 package com.example.issam.agenda.model;
 
-public class Persona {
+import io.realm.RealmObject;
+
+public class Persona extends RealmObject {
     private int id;
     private String nom;
     private String cognoms;
     private int edad;
+
+    public Persona() {
+    }
 
 
     public Persona(String nomPersona, String cognomsPersona, int edadPersona) {

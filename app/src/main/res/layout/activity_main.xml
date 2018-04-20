@@ -1,12 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:padding="16dp">
-
-    <android.support.v7.widget.RecyclerView
+    android:padding="16dp"
+    android:orientation="vertical">
+    
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/rv"
-        />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AÑADIR"
+            android:textSize="30dp"
+            android:layout_weight="3"/>
+        
+        <ImageButton
+            android:id="@+id/Add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_addyahostias"
+            android:layout_weight="1"/>
+        
+    </LinearLayout>
+
+
+    <view class="android.support.v7.app.AlertController$RecycleListView"
+        android:id="@+id/RLV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </view>
+
+
+   
 
 </LinearLayout>

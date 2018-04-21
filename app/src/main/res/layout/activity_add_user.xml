@@ -6,4 +6,57 @@
     android:layout_height="match_parent"
     tools:context="com.example.issam.agenda.view.AddUserActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="518dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="228dp"
+            android:layout_height="55dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Nuevo Contacto"
+            android:textSize="30dp"
+
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/addnombre"
+            android:layout_width="209dp"
+            android:layout_height="58dp"
+            android:hint="NOMBRE"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/addapellido"
+            android:layout_width="209dp"
+            android:layout_height="58dp"
+
+            android:hint="Apellido"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/addedad"
+            android:layout_width="209dp"
+            android:layout_height="39dp"
+            android:hint="Edad"
+            tools:layout_editor_absoluteX="88dp"
+            tools:layout_editor_absoluteY="390dp" />
+
+        <Button
+            android:id="@+id/addfinish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Añadir Contacto"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>

@@ -6,16 +6,16 @@ public class Persona extends RealmObject {
     private int id;
     private String nom;
     private String cognoms;
-    private int edad;
+    private String edad;
 
     public Persona() {
     }
 
 
-    public Persona(String nomPersona, String cognomsPersona, int edadPersona) {
-        this.nom = nomPersona;
-        this.cognoms = cognomsPersona;
-        this.edad = edadPersona;
+    public Persona(String nom, String cognoms, String edad) {
+        this.nom = nom;
+        this.cognoms = cognoms;
+        this.edad = edad;
     }
 
     public void setId(int id) {
@@ -26,22 +26,27 @@ public class Persona extends RealmObject {
         return id;
     }
 
-    public void posarNom(String valornom) {
-        nom = valornom;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
-    public void posarCognoms(String valorcognoms) {
-        cognoms = valorcognoms;
-    }
-    public void posarEdad (int valoredad){edad = valoredad; }
 
-    public String obtenirNom(){
+    public String getNom() {
         return nom;
     }
-    public String obtenirCognoms(){
+
+    public void setCognoms(String cognoms) {
+        this.cognoms = cognoms;
+    }
+
+    public String getCognoms() {
         return cognoms;
     }
 
-    public int obtenirEdad(){
+    public void setEdad(String edad) {
+        this.edad = edad;
+    }
+
+    public String getEdad() {
         return edad;
     }
 }

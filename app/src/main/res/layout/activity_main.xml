@@ -13,12 +13,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="AÑADIR"
+            android:text="AÑADIR CONTACTO"
             android:textSize="30dp"
             android:layout_weight="3"/>
         
         <ImageButton
-            android:id="@+id/Add"
+            android:id="@+id/addContact"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_addyahostias"
@@ -27,14 +27,10 @@
     </LinearLayout>
 
 
-    <view class="android.support.v7.app.AlertController$RecycleListView"
-        android:id="@+id/RLV"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </view>
-
-
-   
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"/>
 
 </LinearLayout>

@@ -21,7 +21,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private List<Persona> personaList = new ArrayList<>();
+    private List<Persona> personaList;
     private RecyclerView recyclerView;
     private ContactAdapter cAdapter;
     ImageButton addContact;
@@ -56,5 +56,15 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     }
+    public void inicializarDatos(){
+        personaList = new ArrayList<>();
+
+        for(int i= 0; personaList.size()<1; i++){
+
+        }
+
+    }
+
 }

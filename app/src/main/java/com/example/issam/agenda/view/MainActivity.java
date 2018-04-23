@@ -21,7 +21,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private List<Persona> personaList;
+    private List<Persona> personaList = new ArrayList<>();
     private RecyclerView recyclerView;
     private ContactAdapter cAdapter;
     ImageButton addContact;
@@ -47,9 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView.setHasFixedSize(true);
 
-        RecyclerView.LayoutManager cLayoutManager = new LinearLayoutManager(getApplicationContext());
-
-        recyclerView.setLayoutManager(cLayoutManager);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(cAdapter);
@@ -58,13 +56,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    public void inicializarDatos(){
-        personaList = new ArrayList<>();
 
-        for(int i= 0; personaList.size()<1; i++){
-
-        }
-
-    }
 
 }

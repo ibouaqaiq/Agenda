@@ -16,23 +16,14 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.MyViewHo
     private List<Persona> listaPersonas = new ArrayList<>();
 
     public ContactAdapter(List<Persona> personaList) {
+        this.listaPersonas = personaList;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
-        public TextView nombre, apellido, edad;
-        public MyViewHolder(View view) {
-            super(view);
-            nombre = view.findViewById(R.id.nombre);
-            apellido = view.findViewById(R.id.apellido);
-            edad = view.findViewById(R.id.edad);
-        }
-    }
 
     @Override
     public ContactAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item,parent,false);
-
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        View itemView = inflater.inflate(R.layout.item,parent,false);
         return new MyViewHolder(itemView);
     }
 
@@ -50,5 +41,14 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.MyViewHo
         return listaPersonas.size();
     }
 
+    public class MyViewHolder extends RecyclerView.ViewHolder{
+        public TextView nombre, apellido, edad;
+        public MyViewHolder(View view) {
+            super(view);
+            nombre = view.findViewById(R.id.nombre);
+            apellido = view.findViewById(R.id.apellido);
+            edad = view.findViewById(R.id.edad);
+        }
+    }
 
 }

@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private ContactAdapter cAdapter;
     ImageButton addContact;
     private Realm realm;
-    private RealmResults<Persona> pipol;
+    public RealmResults<Persona> pipol;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recycler_view);
 
-        cAdapter = new ContactAdapter(pipol);
+        cAdapter = new ContactAdapter(pipol,getApplicationContext());
 
         recyclerView.setHasFixedSize(true);
 
@@ -73,7 +73,16 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        realm.close();
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        cAdapter.notifyDataSetChanged();
+
+
     }
 
 

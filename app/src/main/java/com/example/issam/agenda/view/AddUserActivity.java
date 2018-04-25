@@ -22,7 +22,7 @@ public class AddUserActivity extends AppCompatActivity {
 
     EditText addnombre, addapellido, addedad;
     Button addfinish;
-    Persona contacto = new Persona();
+
     Realm realm;
 
     @Override
@@ -30,22 +30,33 @@ public class AddUserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_user);
 
+
+        realm = Realm.getDefaultInstance();
+
         addnombre = findViewById(R.id.addnombre);
         addapellido = findViewById(R.id.addapellido);
         addedad = findViewById(R.id.addedad);
         addfinish = findViewById(R.id.addfinish);
 
 
-        contacto.setNom(addnombre.getText().toString());
-        contacto.setCognoms(addapellido.getText().toString());
-        contacto.setEdad(addedad.getText().toString());
+
 
 
         addfinish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Persona contacto = new Persona();
 
+                contacto.setNom(addnombre.getText().toString());
+                contacto.setCognoms(addapellido.getText().toString());
+                contacto.setEdad(addedad.getText().toString());
+
+                realm.beginTransaction();
                 realm.copyToRealmOrUpdate(contacto);
+                realm.commitTransaction();
+
+                //Toast.makeText(AddUserActivity.this, contacto.getId(), Toast.LENGTH_SHORT).show();
+                System.out.println(contacto.getId());
 
                 onBackPressed();
 

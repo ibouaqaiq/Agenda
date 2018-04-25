@@ -8,13 +8,14 @@ import com.example.issam.agenda.MyApplication;
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
-public class Persona extends RealmObject{
+public class Persona extends RealmObject implements Parcelable{
     @PrimaryKey private int id;
     private String nom;
     private String cognoms;
     private String edad;
 
     public Persona() {
+        this.id = MyApplication.PersonID.incrementAndGet();
     }
 
     public Persona( String nom, String cognoms, String edad) {
@@ -24,6 +25,25 @@ public class Persona extends RealmObject{
         this.edad = edad;
     }
 
+
+    protected Persona(Parcel in) {
+        id = in.readInt();
+        nom = in.readString();
+        cognoms = in.readString();
+        edad = in.readString();
+    }
+
+    public static final Creator<Persona> CREATOR = new Creator<Persona>() {
+        @Override
+        public Persona createFromParcel(Parcel in) {
+            return new Persona(in);
+        }
+
+        @Override
+        public Persona[] newArray(int size) {
+            return new Persona[size];
+        }
+    };
 
     public void setId(int id) {
         this.id = id;
@@ -58,4 +78,16 @@ public class Persona extends RealmObject{
     }
 
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(nom);
+        dest.writeString(cognoms);
+        dest.writeString(edad);
+    }
 }

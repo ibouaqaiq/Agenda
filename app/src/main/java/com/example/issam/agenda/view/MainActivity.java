@@ -1,5 +1,6 @@
 package com.example.issam.agenda.view;
 
+import android.app.Application;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,9 +8,11 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ListAdapter;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.example.issam.agenda.R;
@@ -19,18 +22,25 @@ import com.example.issam.agenda.model.Persona;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
+import io.realm.RealmObject;
+
 public class MainActivity extends AppCompatActivity {
 
-    private List<Persona> personaList = new ArrayList<>();
+
+
+    private static List<Persona> personaList = new ArrayList<>();
     private RecyclerView recyclerView;
     private ContactAdapter cAdapter;
     ImageButton addContact;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Realm realm = Realm.getDefaultInstance();
 
         addContact = findViewById(R.id.addContact);
 
@@ -39,7 +49,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, AddUserActivity.class));
             }
+
+
+
         });
+
 
         recyclerView = findViewById(R.id.recycler_view);
 
@@ -54,8 +68,14 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
+        realm.close();
     }
 
 
+
+
+
 }
+
+
+

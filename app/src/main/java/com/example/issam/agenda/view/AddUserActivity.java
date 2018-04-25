@@ -3,9 +3,11 @@ package com.example.issam.agenda.view;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.issam.agenda.R;
 import com.example.issam.agenda.adapter.ContactAdapter;
@@ -18,6 +20,7 @@ public class AddUserActivity extends AppCompatActivity {
 
     EditText addnombre, addapellido, addedad;
     Button addfinish;
+    Persona contacto = new Persona();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +32,17 @@ public class AddUserActivity extends AppCompatActivity {
         addedad = findViewById(R.id.addedad);
         addfinish = findViewById(R.id.addfinish);
 
+
+        contacto.setNom(addnombre.getText().toString());
+        contacto.setCognoms(addapellido.getText().toString());
+        contacto.setEdad(addedad.getText().toString());
+
         addfinish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AddUserActivity.this, ContactAdapter.class);
+
+                onBackPressed();
+
 
             }
         });

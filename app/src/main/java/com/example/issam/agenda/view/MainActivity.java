@@ -25,22 +25,27 @@ import java.util.List;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 import io.realm.RealmObject;
+import io.realm.RealmResults;
 
 public class MainActivity extends AppCompatActivity {
 
 
 
-    private static List<Persona> personaList = new ArrayList<>();
     private RecyclerView recyclerView;
     private ContactAdapter cAdapter;
     ImageButton addContact;
+    private Realm realm;
+    private RealmResults<Persona> pipol;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Realm realm = Realm.getDefaultInstance();
+
+        realm = Realm.getDefaultInstance();
+
+        pipol=realm.where(Persona.class).findAll();
 
         addContact = findViewById(R.id.addContact);
 
@@ -57,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recycler_view);
 
-        cAdapter = new ContactAdapter(personaList);
+        cAdapter = new ContactAdapter(pipol);
 
         recyclerView.setHasFixedSize(true);
 

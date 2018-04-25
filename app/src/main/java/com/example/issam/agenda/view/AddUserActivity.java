@@ -16,11 +16,14 @@ import com.example.issam.agenda.model.Persona;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.realm.Realm;
+
 public class AddUserActivity extends AppCompatActivity {
 
     EditText addnombre, addapellido, addedad;
     Button addfinish;
     Persona contacto = new Persona();
+    Realm realm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +40,12 @@ public class AddUserActivity extends AppCompatActivity {
         contacto.setCognoms(addapellido.getText().toString());
         contacto.setEdad(addedad.getText().toString());
 
+
         addfinish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                realm.copyToRealmOrUpdate(contacto);
 
                 onBackPressed();
 

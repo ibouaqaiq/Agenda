@@ -45,7 +45,7 @@ public class editUserActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
+//hola
                 persona.setNom(addnombre.getText().toString());
                 persona.setCognoms(addapellido.getText().toString());
                 persona.setEdad(addedad.getText().toString());

@@ -58,6 +58,8 @@ public class ContactAdapter extends RecyclerView.Adapter<ViewHolder> {
             }
         });
 
+        //jelou
+
         holder.editar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

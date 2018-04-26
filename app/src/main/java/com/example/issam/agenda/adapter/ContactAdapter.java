@@ -65,6 +65,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ViewHolder> {
             public void onClick(View v) {
                 Intent intent = new Intent(context,editUserActivity.class);
                 intent.putExtra("persona",persona);
+                v.getContext().startActivity(intent);
 
             }
         });

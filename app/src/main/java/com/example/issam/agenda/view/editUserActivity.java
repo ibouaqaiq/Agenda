@@ -27,12 +27,16 @@ public class editUserActivity extends AppCompatActivity {
 
         final Persona persona = intent.getParcelableExtra("persona");
 
+        System.out.println(persona.getNom());
+
+
         realm = Realm.getDefaultInstance();
 
-        addnombre = findViewById(R.id.addnombre);
-        addapellido = findViewById(R.id.addapellido);
-        addedad = findViewById(R.id.addedad);
-        addfinish = findViewById(R.id.addfinish);
+
+        addnombre = findViewById(R.id.editNombre);
+        addapellido = findViewById(R.id.editApellido);
+        addedad = findViewById(R.id.editEdad);
+        addfinish = findViewById(R.id.confirm);
 
 
         addnombre.setText(persona.getNom());

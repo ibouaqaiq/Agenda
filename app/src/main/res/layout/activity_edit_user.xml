@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.editUserActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="518dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="228dp"
+            android:layout_height="55dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Editar Contacto"
+            android:textSize="30dp"
+
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/editNombre"
+            android:layout_width="209dp"
+            android:layout_height="58dp"
+            android:hint="NOMBRE"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/editApellido"
+            android:layout_width="209dp"
+            android:layout_height="58dp"
+
+            android:hint="Apellido"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/editEdad"
+            android:layout_width="209dp"
+            android:layout_height="39dp"
+            android:hint="Edad"
+            tools:layout_editor_absoluteX="88dp"
+            tools:layout_editor_absoluteY="390dp" />
+
+        <Button
+            android:id="@+id/addfinish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirmar"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

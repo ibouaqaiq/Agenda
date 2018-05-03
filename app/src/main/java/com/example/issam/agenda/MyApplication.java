@@ -21,9 +21,11 @@ public class MyApplication extends Application {
         // The default Realm file is "default.realm" in Context.getFilesDir();
         // we'll change it to "myrealm.realm"
         Realm.init(getApplicationContext());
-        RealmConfiguration config = new RealmConfiguration
-                .Builder()
+        RealmConfiguration config = new RealmConfiguration.Builder()
+                .schemaVersion(0)
+                .migration(new Migration())
                 .build();
+
         Realm.setDefaultConfiguration(config);
 
         Realm realm = Realm.getDefaultInstance();

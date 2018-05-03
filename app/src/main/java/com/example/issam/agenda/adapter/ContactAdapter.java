@@ -45,7 +45,8 @@ public class ContactAdapter extends RecyclerView.Adapter<ViewHolder> {
 
         holder.nombre.setText(persona.getNom());
         holder.apellido.setText(persona.getCognoms());
-        holder.edad.setText(persona.getEdad());
+        holder.edad.setText(String.valueOf(persona.getEdad()));
+        holder.nacimiento.setText(String.valueOf(persona.getNacimiento()));
 
         holder.eliminar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +83,7 @@ class ViewHolder extends RecyclerView.ViewHolder{
     TextView nombre;
     TextView apellido;
     TextView edad;
+    TextView nacimiento;
 
     ImageButton eliminar;
     Button editar;
@@ -92,6 +94,7 @@ class ViewHolder extends RecyclerView.ViewHolder{
         nombre = itemView.findViewById(R.id.nombre);
         apellido = itemView.findViewById(R.id.apellido);
         edad = itemView.findViewById(R.id.edad);
+        nacimiento = itemView.findViewById(R.id.nacimiento);
 
         eliminar = itemView.findViewById(R.id.borrar);
         editar = itemView.findViewById(R.id.editar);

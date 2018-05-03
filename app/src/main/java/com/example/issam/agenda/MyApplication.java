@@ -22,7 +22,7 @@ public class MyApplication extends Application {
         // we'll change it to "myrealm.realm"
         Realm.init(getApplicationContext());
         RealmConfiguration config = new RealmConfiguration.Builder()
-                .schemaVersion(0)
+                .schemaVersion(1)
                 .migration(new Migration())
                 .build();
 

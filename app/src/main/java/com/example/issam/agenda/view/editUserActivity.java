@@ -41,7 +41,7 @@ public class editUserActivity extends AppCompatActivity {
 
         addnombre.setText(persona.getNom());
         addapellido.setText(persona.getCognoms());
-        addedad.setText(persona.getEdad());
+        addedad.setText(String.valueOf(persona.getEdad()));
 
 
 
@@ -49,10 +49,10 @@ public class editUserActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-//holah
                 persona.setNom(addnombre.getText().toString());
                 persona.setCognoms(addapellido.getText().toString());
-                persona.setEdad(addedad.getText().toString());
+                persona.setEdad(Integer.parseInt(addedad.getText().toString()));
+                persona.setNacimiento(persona.getEdad());
 
                 realm.beginTransaction();
                 realm.copyToRealmOrUpdate(persona);

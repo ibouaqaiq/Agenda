@@ -50,6 +50,7 @@ public class AddUserActivity extends AppCompatActivity {
                 contacto.setNom(addnombre.getText().toString());
                 contacto.setCognoms(addapellido.getText().toString());
                 contacto.setEdad(Integer.parseInt(addedad.getText().toString()));
+                contacto.setNacimiento(contacto.getEdad());
 
                 realm.beginTransaction();
                 realm.copyToRealmOrUpdate(contacto);
